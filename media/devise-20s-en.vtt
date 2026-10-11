@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.250 --> 00:00:03.682
+Can a model recognize classes it's never trained on?
+
+2
+00:00:03.982 --> 00:00:07.702
+DeViSE learns word embeddings and visual features.
+
+3
+00:00:08.052 --> 00:00:13.284
+Then it maps images into a shared space, so the correct labels score higher.
+
+4
+00:00:13.684 --> 00:00:18.604
+It can even predict unseen classes, if their word embeddings are available.
