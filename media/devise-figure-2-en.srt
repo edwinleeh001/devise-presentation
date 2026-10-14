@@ -1,0 +1,19 @@
+1
+00:00:00,250 --> 00:00:03,298
+Can DeViSE recognize unseen classes?
+
+2
+00:00:03,648 --> 00:00:06,840
+Here, the correct lens label ranks fourth.
+
+3
+00:00:07,240 --> 00:00:09,688
+But both models miss the salad bar.
+
+4
+00:00:10,088 --> 00:00:14,456
+For the spacecraft, softmax gives more relevant suggestions.
+
+5
+00:00:14,906 --> 00:00:18,962
+They show strengths and limits, not overall accuracy.

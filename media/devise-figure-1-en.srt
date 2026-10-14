@@ -1,0 +1,15 @@
+1
+00:00:00,250 --> 00:00:03,562
+How does DeViSE connect vision and language?
+
+2
+00:00:04,012 --> 00:00:08,332
+It combines a pretrained visual network with fixed word embeddings.
+
+3
+00:00:08,832 --> 00:00:12,864
+A learned projection aligns images with label vectors.
+
+4
+00:00:13,464 --> 00:00:18,768
+Panel B shows semantic neighborhoods among labels, not image predictions.
