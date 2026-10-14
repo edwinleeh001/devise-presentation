@@ -47,11 +47,16 @@ Source: Frome et al. (2013), p.3
 
 ## 5. Where the semantic structure comes from / 语义结构从哪里来
 
+![Original paper Figure 1 — Frome et al., NIPS 2013](../media/originals/devise-figure-1.png)
+
+[Open original paper page 3](./devise-nips2013.pdf#page=3)
+
+- Figure 1A: arrows mean parameter initialization; Figure 1B: label embeddings, not projected test images. / Figure 1A 的箭头表示参数初始化；Figure 1B 显示标签嵌入，不是测试图像投影。
 - Skip-gram: predict nearby terms from a source term. / Skip-gram：用一个词预测上下文中的邻近词。
 - Training corpus: 5.7 million Wikipedia documents, 5.4 billion words; approximately 155,000 terms. / 文本训练集：570 万篇维基百科文档、54 亿词，词表约 15.5 万项。
 - Semantically related terms tend to have similar vectors; this need not imply identical visual appearance. / 语义相关词通常向量相近，但不一定具有相同视觉外观。
 
-Source: Frome et al. (2013), p.3
+Source: Original Figure 1 and §3.1–3.3, p.3
 
 ## 6. Learn an ordering, not just a destination / 不仅靠近正确标签，还要排在错误标签之前
 
@@ -111,11 +116,16 @@ Source: Table 1, p.5
 
 ## 13. A larger label universe is a harder test / 候选标签越多，测试越困难
 
+![Original paper Figure 2 — Frome et al., NIPS 2013](../media/originals/devise-figure-2.png)
+
+[Open original paper page 6](./devise-nips2013.pdf#page=6)
+
+- Figure 2: exact hits in A–D; both models miss E; softmax is more nearly correct in F. Selected qualitative cases are not an aggregate metric. / Figure 2：A–D 命中准确标签；E 两者均未命中；F 的 softmax 更接近。选取的定性案例不是总体指标。
 - 2-hop unseen-only hit@5 is 18.1%; with seen labels included it is 7.9%. / 2-hop 未见类候选 hit@5 为 18.1%；加入已见类后为 7.9%。
 - Across 20,841 unseen labels, unseen-only hit@1 is 0.8% and hit@5 is 2.5%. / 20,841 个未见标签下，未见候选 hit@1 为 0.8%，hit@5 为 2.5%。
 - These are reported paper results, not measurements from the classroom demo. / 这些是论文报告结果，不是课堂示例的测量结果。
 
-Source: Table 2, p.6; interpretation §4.2, p.7
+Source: Original Figure 2 and Table 2, p.6; §4.2 reading, p.7
 
 ## 14. Semantic quality has a boundary / 语义改善也有边界
 

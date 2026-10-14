@@ -52,17 +52,29 @@ Use Figure 1 to explain the information flow before showing the loss. The left n
 
 Source: Frome et al. (2013), p.3
 
-## 5. Where the semantic structure comes from / 语义结构从哪里来 · 2 min
+## 5. Where the semantic structure comes from / 语义结构从哪里来 · 2.5 min
 
-The text model learns label relations without visual examples for every label.
+Read the original Figure 1: pretrained visual and language models meet through a learned transformation.
 
-The semantic space is learned before the joint visual-semantic model. Skip-gram is trained using surrounding words, so labels that occur in related contexts can become neighbors. The paper uses single-word and multi-word terms, not only simple object names. For the joint model, the text vectors are normalized to length one. This matters: a dot-product ranking then depends on alignment with the projected image rather than arbitrary label-vector length. However, semantic proximity is a statistical property of language. It does not guarantee that the objects look similar, nor that two senses of an ambiguous word can be separated. These observations prepare the later discussion of failure cases.
+![Original paper Figure 1 — Frome et al., NIPS 2013](../media/originals/devise-figure-1.png)
 
-语义空间先于联合模型训练。Skip-gram 使用上下文，因此在相近语境出现的标签可能成为邻居。词表包含单词和多词短语，不只有简单物体名称。联合模型中的词向量被归一化为单位长度，使点积排序不受标签向量任意长度影响，而取决于与图像投影的对齐关系。但语言中的语义接近不保证视觉相似，也无法自动分离一个多义词的不同含义。这为后续局限讨论作铺垫。
+[Open original paper page 3](./devise-nips2013.pdf#page=3)
 
-**Audience prompt / 互动：** Would “crane” always have one unambiguous visual meaning? / “crane”一定只有一种明确的视觉含义吗？
+Let’s use the authors’ original Figure 1 rather than starting with our summary diagram. In panel A, look at the left and right models first. On the left, a visual network has been pretrained to classify images with a softmax head. On the right, skip-gram learns word vectors by predicting nearby words. The arrows into the middle say parameter initialization: DeViSE inherits pretrained representations from both sides. It removes the visual softmax and learns a transformation into the language space. A similarity metric compares the projected image with the label vector. The visual feature has 4,096 dimensions; the paper uses 500- or 1,000-dimensional label embeddings.
 
-Source: Frome et al. (2013), p.3
+Now look at panel B. This is the authors’ t-SNE plot of a subset of the ImageNet 1K label embeddings learned from text. The colors show semantic groups, including dogs, birds, and musical instruments. The useful observation is that language supplies structure before the two modalities are aligned. This is not a plot of test-image predictions, and the two-dimensional distances are not classification scores. The real ranking is performed in the higher-dimensional embedding space.
+
+The text vectors are normalized and kept fixed during joint training. First the projection is learned, and later the visual backbone is fine-tuned. Keep these roles clear: language supplies label representations; labeled training images teach the mapping. This prepares the ranking loss on the next slide.
+
+我们先看作者的原始 Figure 1，而不是从我们自己的总结图开始。A 面板先看左右两端：左侧视觉网络已用 softmax 进行图像分类预训练；右侧 Skip-gram 通过预测邻近词学习词向量。指向中间的箭头写的是参数初始化，表示 DeViSE 从两侧继承预训练表示。联合模型移除视觉 softmax，学习通向语言空间的变换，再通过相似度比较图像投影与标签向量。视觉特征为 4,096 维，论文的标签嵌入为 500 或 1,000 维。
+
+再看 B 面板。这是作者对文本学习到的部分 ImageNet 1K 标签嵌入作出的 t-SNE 图，颜色区分狗、鸟、乐器等语义组。关键观察是：语言在跨模态对齐之前已提供结构。这不是测试图像预测图，二维图中的距离也不是分类分数；实际排序发生在更高维的嵌入空间。
+
+联合训练时，词向量单位归一化并保持固定。先学习投影，再微调视觉骨干。要区分各自角色：语言提供标签表示，有标注训练图像教会映射。这就为下一页的排序损失作了铺垫。
+
+**Audience prompt / 互动：** Which panel shows the model architecture, and which shows semantic neighborhoods? Are the 2D distances prediction scores? / 哪个面板展示模型架构，哪个展示语义邻域？二维距离是预测分数吗？
+
+Source: Original Figure 1 and §3.1–3.3, p.3
 
 ## 6. Learn an ordering, not just a destination / 不仅靠近正确标签，还要排在错误标签之前 · 2 min
 
@@ -70,7 +82,11 @@ The correct label should outscore a wrong label by a margin.
 
 Read the three terms aloud: the required margin, minus the correct-label score, plus the competing-label score. If the correct score already exceeds the wrong score by the margin, this term is zero. Otherwise the model receives a learning signal. Equation 1 is written as a sum, but the practical algorithm samples negatives and stops at the first violation. Do not describe the implementation as summing every label on every update. The authors report that an L2 objective gave about half the ranking model’s accuracy, without a full result table in the main text. Present that as a reported observation, not a universal theorem about ranking losses.
 
+Optional: the semantic slide-rule instrument illustrates the dot product with three assigned unit label vectors. Change the query direction and inspect the moving score cursors. These scores are computed toy values; the original Figure 2 lists no numerical scores.
+
 逐项解释：要求的间隔，减去正确标签分数，加上竞争标签分数。若正确标签已经领先至少一个间隔，这项损失为零；否则产生学习信号。公式写成求和，但实际算法随机检查负标签，在第一个违反间隔的标签处截断，因此不能说每次都遍历所有类别更新。作者称 L2 目标的准确率约为排序模型的一半，但正文没有完整对照表，应将它标为作者报告的观察，而不是普遍定理。
+
+可选补充：语义滑尺装置用三个指定的单位标签向量说明点积。改变查询方向，观察分数游标和读数。这里的分数是可复算教学值；原始 Figure 2 并未列出数值分数。
 
 **Audience prompt / 互动：** With m = 0.1, sᵧ = 0.60 and sⱼ = 0.55, what is the loss? / m=0.1、sᵧ=0.60、sⱼ=0.55 时，损失是多少？
 
@@ -88,7 +104,7 @@ Separate initialization from joint training. The two pretrained models are usefu
 
 Source: Frome et al. (2013), p.4
 
-## 8. Inspect one ranking update / 逐步检查一次排序更新 · 3 min
+## 8. Inspect one ranking update / 逐步检查一次排序更新 · 2.5 min
 
 Predict the effect, change the margin or learning rate, and inspect the exact arithmetic.
 
@@ -136,7 +152,7 @@ Start with a concrete distinction: predicting a related bird instead of the exac
 
 Source: Main §4, pp.4–5; Supplement §A.3, pp.2–3
 
-## 12. Comparable accuracy, different error structure / 准确率接近，错误结构不同 · 2 min
+## 12. Comparable accuracy, different error structure / 准确率接近，错误结构不同 · 1.5 min
 
 On seen classes, DeViSE is not uniformly better than softmax.
 
@@ -148,17 +164,33 @@ Read the table without turning a nuanced result into a victory slogan. At top on
 
 Source: Table 1, p.5
 
-## 13. A larger label universe is a harder test / 候选标签越多，测试越困难 · 2 min
+## 13. A larger label universe is a harder test / 候选标签越多，测试越困难 · 2.5 min
 
-Read every zero-shot number together with its candidate set and k.
+Use the original Figure 2 to inspect successes and failures, then read Table 2 under its stated candidate set.
 
-First select two-hop and k equals five. The drop from eighteen point one to seven point nine occurs when one thousand seen labels are added, with the trained model fixed. This is evidence of competition and seen-class bias. Then move to the full unseen label universe and keep k fixed. Accuracy drops again, but both candidate count and semantic distance change, so the table does not isolate one cause. Avoid saying the model achieves eighteen percent accuracy on every zero-shot problem: that value belongs to a specific top-five, two-hop, unseen-only protocol. The raw top-one accuracy on the hardest candidate set remains low.
+![Original paper Figure 2 — Frome et al., NIPS 2013](../media/originals/devise-figure-2.png)
 
-先选择 2-hop、k=5。固定训练模型，仅加入 1,000 个已见标签，结果从 18.1% 降至 7.9%，体现了候选竞争和已见类偏置。再保持 k 不变，切换到全部未见标签，准确率继续下降，但此时类别数量和语义距离同时变化，无法孤立归因。不能说“模型的零样本准确率是 18%”：那是特定 2-hop、未见候选、top-5 协议下的数值。最困难集合上的 top-1 绝对准确率仍然较低。
+[Open original paper page 6](./devise-nips2013.pdf#page=6)
 
-**Audience prompt / 互动：** Is 18.1% a top-1 result over all 20,841 unseen labels? / 18.1% 是 20,841 个未见标签上的 top-1 结果吗？
+Before the aggregate numbers, let’s inspect the authors’ original Figure 2. Both systems were trained on ILSVRC 2012 1K. The difference is their output vocabulary: DeViSE+1K ranks labels from ImageNet 2011 21K, while softmax can only name its 1K training classes. Each column shows five predictions in decreasing score order, and bold type marks the exact correct label. The figure gives ranks, not numerical confidence values.
 
-Source: Table 2, p.6; interpretation §4.2, p.7
+In A, DeViSE places telephoto lens at rank four, with several related optical labels. In B and C, the exact English-horn and babbler labels appear at rank three. In D, softmax’s first pineapple label is plausible, so we should not dismiss it. DeViSE reaches the specific pineapple-plant synset at rank three and keeps a more coherent fruit-and-plant neighborhood. The fruit label and plant synset are not interchangeable.
+
+E and F matter just as much. For the salad bar in E, neither model gets the exact label, although several suggestions are plausible. In F, neither gets spacecraft, and the authors judge softmax’s vehicle-related suggestions more nearly correct than DeViSE’s mixed labels. Therefore, the claim is useful transfer and often more relevant errors, not universal superiority. These six selected examples cannot estimate overall accuracy.
+
+Now read Table 2. At two-hop, top-five unseen-only hit rate is 18.1%; adding 1,000 seen candidates reduces it to 7.9% with the model fixed. In the full 20,841-unseen-label setting, hit@1 is 0.8% and hit@5 is 2.5%. Every number needs its candidate set and k.
+
+先看作者的原始 Figure 2，再看总体数字。两个系统都在 ILSVRC 2012 1K 上训练，差别是输出词表：DeViSE+1K 从 ImageNet 2011 21K 标签中排序，softmax 只能输出自己的 1K 训练类别。每列列出按分数递减排列的五个预测，粗体标出准确标签。图中只给排名，没有数值置信度。
+
+A 中，DeViSE 把长焦镜头排在第 4 位，其他预测多与光学有关。B 和 C 的准确英国管、画眉类标签都在第 3 位。D 中 softmax 首个菠萝标签是合理的，不应全部否定；DeViSE 在第 3 位命中特定菠萝植株同义词集，其他候选也更集中于水果与植物。水果标签与植株同义词集不能混为一谈。
+
+E、F 同样重要。E 的沙拉吧，两个模型都没有命中准确标签，但部分预测合理。F 的航天器，两者也都未命中，作者认为 softmax 的交通工具相关候选比 DeViSE 的混杂标签更接近。因此结论是有用的迁移、错误常常更相关，而非处处优于基线；六个挑选的示例不能估计总体准确率。
+
+再看 Table 2：2-hop、未见候选、top-5 为 18.1%；模型不变，仅加入 1,000 个已见候选，就降为 7.9%。全部 20,841 个未见标签下 hit@1 为 0.8%、hit@5 为 2.5%。每个数字都必须带上候选集合与 k。
+
+**Audience prompt / 互动：** Which example contradicts “DeViSE is always better”? Can a plausible label still be an exact-label miss? / 哪个例子反驳“DeViSE 总是更好”？合理标签仍可能是准确标签未命中吗？
+
+Source: Original Figure 2 and Table 2, p.6; §4.2 reading, p.7
 
 ## 14. Semantic quality has a boundary / 语义改善也有边界 · 1 min
 
