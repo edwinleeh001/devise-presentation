@@ -1,6 +1,6 @@
 # DeViSE — COMP6710 · Li Hu
 
-30-minute independent presentation + 10-minute Q&A. The plan includes interaction and inspection; rehearse timing. English website with independently switchable Chinese notes.
+30-minute independent presentation + 10-minute Q&A. The English run of show targets 28 minutes, including three 20-second videos, audience checks, demonstrations and changeovers, with 2 minutes of contingency inside the 30-minute limit. Timing is estimated at 110 spoken words per minute; rehearse the delivery. Stage cues and recorded narration are not extra presenter speech. Speaker notes switch independently between Chinese and English.
 
 Primary evidence: Frome et al., NIPS 2013, pp.1–9, plus official supplement pp.1–3. AI-assisted organization, translation and implementation. Toy computations are not an ImageNet reproduction.
 
