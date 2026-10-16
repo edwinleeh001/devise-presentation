@@ -12,7 +12,11 @@ English script by slide · Slides 10-19 · Budget 15:00
 - The 20 seconds of video, audience responses, applicable 45-second ranking / 20-second candidate demonstrations, pauses and spoken handover are included. Play each clip once; do not read its recorded narration aloud.
 - Brackets contain unspoken operating cues. Take one brief audience response per question. Speak the prepared explanation during a demonstration; do not add extra presets.
 - Estimates use 110 English words or 200 equivalent Chinese units per minute, with additional allowance for foreign terms and digits in Chinese. Rehearse against the cumulative slide deadlines.
-- If still speaking at 14:30, A goes straight to the handover and B goes straight to the three takeaways. Skip extra responses, do not replay clips, and stop by your own 15:00. Slide 20 and Q&A follow both timed parts.
+- If still speaking at 14:30, A goes straight to the handover and B uses the brief closing below. Skip extra responses, do not replay clips, and stop by your own 15:00. Slide 20 and Q&A follow both timed parts.
+
+**Emergency wrap-up at 14:30 - use only if behind; replace the remaining script, do not add this to it:**
+
+Language supplies label meaning. Ranking connects images to that meaning. The candidate set shapes the result. DeViSE enables useful, conditional zero-shot transfer. Thank you.
 
 | Slide and title | Your clock | Talk clock | Video |
 |---|---|---|---:|

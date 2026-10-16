@@ -16,7 +16,11 @@ A: slides 1-9 / 第 1-9 页。B: slides 10-19 / 第 10-19 页。Slide 20 is a sh
 - 视频合计 40 秒、互动、45 秒排序演示或 20 秒候选切换（如适用）、停顿与交接均已计入。视频只播一次，播放时不重复朗读录制旁白。
 - 方括号内为操作提示，不朗读。每个互动问题只收一个简短回答；演示时照稿讲解，不额外扩展预设。
 - 英文按每分钟 110 个词估算；中文按每分钟 200 个等效单位估算，外文与数字加算时间。时间为排练规划，请按每页累计节点试讲。
-- 若到 14:30 仍未收束，A 直接说交接语，B 直接说最后三个结论；略过追加互动，不重播视频，并在个人 15:00 前结束。第 20 页与问答均在两人演讲之后使用。
+- 若到 14:30 仍未收束，A 直接说交接语，B 使用下方的简短结语；略过追加互动，不重播视频，并在个人 15:00 前结束。第 20 页与问答均在两人演讲之后使用。
+
+**14:30 应急收束 - 仅在进度落后时替换剩余内容，不追加朗读：**
+
+方法部分就介绍到这里。下面交给我的搭档，继续分析实验证据。
 
 | 页码与标题 | 个人时间 | 全场基准 | 视频 |
 |---|---|---|---:|
@@ -302,7 +306,11 @@ English script by slide · Slides 1-9 · Budget 15:00
 - The 40 seconds of video, audience responses, applicable 45-second ranking / 20-second candidate demonstrations, pauses and spoken handover are included. Play each clip once; do not read its recorded narration aloud.
 - Brackets contain unspoken operating cues. Take one brief audience response per question. Speak the prepared explanation during a demonstration; do not add extra presets.
 - Estimates use 110 English words or 200 equivalent Chinese units per minute, with additional allowance for foreign terms and digits in Chinese. Rehearse against the cumulative slide deadlines.
-- If still speaking at 14:30, A goes straight to the handover and B goes straight to the three takeaways. Skip extra responses, do not replay clips, and stop by your own 15:00. Slide 20 and Q&A follow both timed parts.
+- If still speaking at 14:30, A goes straight to the handover and B uses the brief closing below. Skip extra responses, do not replay clips, and stop by your own 15:00. Slide 20 and Q&A follow both timed parts.
+
+**Emergency wrap-up at 14:30 - use only if behind; replace the remaining script, do not add this to it:**
+
+That covers the method. I’ll now hand over to my co-presenter for the experimental evidence.
 
 | Slide and title | Your clock | Talk clock | Video |
 |---|---|---|---:|
@@ -588,7 +596,11 @@ Source: §4 and Table 1
 - 视频合计 20 秒、互动、45 秒排序演示或 20 秒候选切换（如适用）、停顿与交接均已计入。视频只播一次，播放时不重复朗读录制旁白。
 - 方括号内为操作提示，不朗读。每个互动问题只收一个简短回答；演示时照稿讲解，不额外扩展预设。
 - 英文按每分钟 110 个词估算；中文按每分钟 200 个等效单位估算，外文与数字加算时间。时间为排练规划，请按每页累计节点试讲。
-- 若到 14:30 仍未收束，A 直接说交接语，B 直接说最后三个结论；略过追加互动，不重播视频，并在个人 15:00 前结束。第 20 页与问答均在两人演讲之后使用。
+- 若到 14:30 仍未收束，A 直接说交接语，B 使用下方的简短结语；略过追加互动，不重播视频，并在个人 15:00 前结束。第 20 页与问答均在两人演讲之后使用。
+
+**14:30 应急收束 - 仅在进度落后时替换剩余内容，不追加朗读：**
+
+语言提供标签含义，排序目标连接图像与语义，候选集合决定怎样理解结果。DeViSE 能实现有条件的零样本迁移。谢谢大家。
 
 | 页码与标题 | 个人时间 | 全场基准 | 视频 |
 |---|---|---|---:|
@@ -859,7 +871,11 @@ English script by slide · Slides 10-19 · Budget 15:00
 - The 20 seconds of video, audience responses, applicable 45-second ranking / 20-second candidate demonstrations, pauses and spoken handover are included. Play each clip once; do not read its recorded narration aloud.
 - Brackets contain unspoken operating cues. Take one brief audience response per question. Speak the prepared explanation during a demonstration; do not add extra presets.
 - Estimates use 110 English words or 200 equivalent Chinese units per minute, with additional allowance for foreign terms and digits in Chinese. Rehearse against the cumulative slide deadlines.
-- If still speaking at 14:30, A goes straight to the handover and B goes straight to the three takeaways. Skip extra responses, do not replay clips, and stop by your own 15:00. Slide 20 and Q&A follow both timed parts.
+- If still speaking at 14:30, A goes straight to the handover and B uses the brief closing below. Skip extra responses, do not replay clips, and stop by your own 15:00. Slide 20 and Q&A follow both timed parts.
+
+**Emergency wrap-up at 14:30 - use only if behind; replace the remaining script, do not add this to it:**
+
+Language supplies label meaning. Ranking connects images to that meaning. The candidate set shapes the result. DeViSE enables useful, conditional zero-shot transfer. Thank you.
 
 | Slide and title | Your clock | Talk clock | Video |
 |---|---|---|---:|
