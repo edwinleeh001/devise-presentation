@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
 2:I[7653,[],""]
 3:I[2497,[],""]
-:HL["/devise-presentation/_next/static/css/d450d2acfbb5e1aa.css","style"]
-0:{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/devise-presentation/_next/static/css/d450d2acfbb5e1aa.css","precedence":"next"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/devise-presentation/favicon.svg"}]}],["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"6D6SZsBXpYOsUFiSgfRdq"}
+:HL["/devise-presentation/_next/static/css/8cc8abfee41e8d38.css","style"]
+0:{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/devise-presentation/_next/static/css/8cc8abfee41e8d38.css","precedence":"next"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/devise-presentation/favicon.svg"}]}],["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"rWGTQ8r0IMBh10O18K-3R"}

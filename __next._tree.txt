@@ -1,2 +1,2 @@
-:HL["/devise-presentation/_next/static/css/d450d2acfbb5e1aa.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"6D6SZsBXpYOsUFiSgfRdq"}
+:HL["/devise-presentation/_next/static/css/8cc8abfee41e8d38.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"rWGTQ8r0IMBh10O18K-3R"}
